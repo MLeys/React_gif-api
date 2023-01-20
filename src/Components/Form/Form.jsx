@@ -1,23 +1,23 @@
 import { useState } from 'react';
 
 
-export default function Form({ liftGifInfo }) {
-	const [image, setImage] = useState('')
-
+export default function Form({ liftGifSearch }) {
+	const [image, setImage] = useState('');
 	function handleChange(e) {
 		setImage(e.target.value)
 	}
 
 	function handleSubmit(e) {
-		e.preventDefault();
-		
-		liftGifInfo(image)
+		e.preventDefault()
+
+		liftGifSearch(image)
 	}
+
 
 	return (
 		<form onSubmit={handleSubmit}>
 		
-			<label>Movie: </label>
+			<label>Search: </label>
 			<input
 				type="text" 
 				name="image" 
@@ -25,7 +25,7 @@ export default function Form({ liftGifInfo }) {
 				value={image}
 				onChange={handleChange}
 			/>
-			<button type="submit"> This is the form</button>
+			<button > Find Gif</button>
 		</form>
 	);
 }
